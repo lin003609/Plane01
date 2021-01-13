@@ -60,8 +60,9 @@ public class MainUI
                     if (errorMessage.startsWith("ORA-12899")) {
                         //ORA-12899: value too large for column "OPTS"."FLIGHT"."ID" (actual: 32, maximum: 30)
                         // 按指定模式在字符串查找
-                        String pattern = "(\\w+-\\d{5}):(\\s\\w+)+\\s(\"\\w+\")\\.(\"\\w+\")\\.(\"\\w+\")";
+                        String pattern = "(\\W)+(\"\\w+\")\\.(\"\\w+\")\\.(\"\\w+\")";;
                         // 创建 Pattern 对象
+                        //(\\w+-\\d{5}):(\\s\\w+)+\\s(\"\\w+\")\\.(\"\\w+\")\\.(\"\\w+\")"
                         Pattern r = Pattern.compile(pattern);
                         // 现在创建 matcher 对象
                         Matcher m = r.matcher(errorMessage);
