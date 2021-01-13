@@ -23,8 +23,9 @@ public class FlightServiceImpl implements IFlightService
     }
 
     @Override
-    public Set<Flight> getAllFlights() {
-        return null;
+    public Set<Flight> getAllFlights() throws SQLException {
+
+        return iFlightDao.getAllFlights();
     }
 
     @Override

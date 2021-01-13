@@ -6,13 +6,14 @@ import bll.impl.FlightServiceImpl;
 
 import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainUI
 {
-    public static void main(String[] args){
+    public static void main(String[] args)  {
         Scanner sc=new Scanner(System.in);
         while (true)
         {
@@ -77,6 +78,20 @@ public class MainUI
 
                 }
 
+
+            }
+            else if(choice==2){
+                IFlightService iFlightService=new FlightServiceImpl();
+                Set<Flight> allFlights= null;
+                try {
+                    allFlights = iFlightService.getAllFlights();
+                    for(Flight flight:allFlights){
+                        System.out.println(flight);
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
             }
         }
