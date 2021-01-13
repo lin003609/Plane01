@@ -50,6 +50,7 @@ public class Flight
     @Override
     public String toString() {
         return "Flight{" +
+                id+
                 "planeType='" + planeType + '\'' +
                 ", seatsNo='" + seatsNo + '\'' +
                 ", currentSeatsNum=" + currentSeatsNum +

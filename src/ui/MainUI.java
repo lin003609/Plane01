@@ -4,13 +4,13 @@ import bean.Flight;
 import bll.IFlightService;
 import bll.impl.FlightServiceImpl;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.UUID;
 
 public class MainUI
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws SQLException {
         Scanner sc=new Scanner(System.in);
         while (true)
         {
@@ -27,6 +27,7 @@ public class MainUI
             if(choice==1)
             {
                 String id= UUID.randomUUID().toString();
+                id=id.replace("-", "");
                 System.out.println(id.replace("-", ""));
 
                 System.out.print("请输入机型：");

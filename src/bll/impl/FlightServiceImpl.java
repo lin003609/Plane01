@@ -5,6 +5,7 @@ import bll.IFlightService;
 import dao.IFlightDao;
 import dao.impl.FlightDaoIml;
 
+import java.sql.SQLException;
 import java.util.Set;
 
 public class FlightServiceImpl implements IFlightService
@@ -16,7 +17,7 @@ public class FlightServiceImpl implements IFlightService
     }
 
     @Override
-    public void insertFlight(Flight flight) {
+    public void insertFlight(Flight flight) throws SQLException {
         iFlightDao.insertFlight(flight);
         System.out.println("到达bll层"+flight);
     }
